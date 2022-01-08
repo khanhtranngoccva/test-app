@@ -4,7 +4,7 @@
 }
 
 .background {
-    background: url("/static/images/campfire.jpg") center no-repeat;
+    background: url("/test-app/static/images/campfire.jpg") center no-repeat;
     background-size: cover;
 }
 

@@ -10,7 +10,7 @@
 }
 
 .background {
-    background: url("/static/images/beach.jpg") center bottom no-repeat;
+    background: url("/test-app/static/images/beach.jpg") center bottom no-repeat;
     background-size: cover;
 }
 

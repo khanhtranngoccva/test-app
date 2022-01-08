@@ -208,12 +208,11 @@
 
 // Configures the themes
     const white_noise_stuff =
-        [["Tides", "/static/audio/ocean.mp3", "/static/images/ocean.png", "/static/customizations/ocean.css"], // completed
-        ["Night Windchime", "/static/audio/windchime160.mp3", "/static/images/windchime.jpg", "/static/customizations/windchime.css"],
-        ["Campfire", "/static/audio/campfire.mp3", "/static/images/campfire.jpg", "/static/customizations/campfire.css"],
-        ["Forest", "/static/audio/forest.mp3", "/static/images/forest.jpg", "/static/customizations/forest.css"],
-        ["Night", "/static/audio/night.mp3", "/static/images/night.jpg", "/static/customizations/night.css"],
-        ];
+        [["Tides", "/test-app/static/audio/ocean.mp3", "/test-app/static/images/ocean.png", "/test-app/static/customizations/ocean.css"], // completed
+        ["Night Windchime", "/test-app/static/audio/windchime160.mp3", "/test-app/static/images/windchime.jpg", "/test-app/static/customizations/windchime.css"],
+        ["Campfire", "/test-app/static/audio/campfire.mp3", "/test-app/static/images/campfire.jpg", "/test-app/static/customizations/campfire.css"],
+        ["Forest", "/test-app/static/audio/forest.mp3", "/test-app/static/images/forest.jpg", "/test-app/static/customizations/forest.css"],
+        ["Night", "/test-app/static/audio/night.mp3", "/test-app/static/images/night.jpg", "/test-app/static/customizations/night.css"],];
     for (let [name, dir, image_src, css_dir] of white_noise_stuff) {
         const element = document.createElement("li");
         $(element).attr("audio_dir", dir);

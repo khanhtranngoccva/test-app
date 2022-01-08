@@ -7,7 +7,7 @@
 }
 
 .background {
-    background: url("/static/images/night.jpg") center no-repeat;
+    background: url("/test-app/static/images/night.jpg") center no-repeat;
     background-size: cover;
 }
 

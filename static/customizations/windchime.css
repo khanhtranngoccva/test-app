@@ -5,7 +5,7 @@
 }
 
 .background {
-    background: url("/static/images/windchime.jpg") center no-repeat;
+    background: url("/test-app/static/images/windchime.jpg") center no-repeat;
     background-size: cover;
 }
 
