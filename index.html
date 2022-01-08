@@ -1,0 +1,253 @@
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static "/css/normalize.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="{% static "/fonts/fonts.css" %}">
+    <link rel="stylesheet" href="{% static "/css/app.css" %}">
+    <link rel="stylesheet" href="{% static "/css/flatpickr_custom.css" %}">
+    <link rel="stylesheet" id="theme_customization">
+    <title>Focus</title>
+</head>
+<body>
+
+<audio id="white_noise_audio" src="{% static "audio/ocean_waves.mp3" %}" loop>
+</audio>
+<nav class="main_navigation">
+    <button class="button mute_button icon_button"><i class="fas fa-volume-up"></i></button>
+    <button class="button settings_window_button icon_button"><i class="fas fa-sliders-h"></i></button>
+    <a role="button" class="button icon_button" href="https://twitter.com/khanhtncva"><i class="fab fa-twitter"></i></a>
+</nav>
+<main class="pomodoro_wrapper wrapper flex_wrapper">
+    <div class="background"></div>
+    <div class="pomodoro_box">
+
+        <div class="to_do_frame">
+            <div class="to_do current">
+                <input type="checkbox" class="custom_checkbox">
+                <p></p>
+                <button class="button cancel_task"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="pomodoro_clock_overlay">
+            <div class="pomodoro_clock">
+                <div class="circle">
+                    <div class="mask half">
+                        <div class="fill clock_rotate"></div>
+                    </div>
+                    <div class="mask full clock_rotate">
+                        <div class="fill clock_rotate"></div>
+                    </div>
+
+                </div>
+                <div class="pomodoro_info">
+                    <p class="time_left"></p>
+                    <p class="white_noise_info">
+                        <i class="fas fa-music"></i><span>Ocean waves</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pomodoro_buttons">
+            <div class="pomodoro_btn_overlay btn_overlay_1">
+                <button class="button start_pomodoro">Start</button>
+            </div>
+            <div class="pomodoro_btn_overlay btn_overlay_2">
+                <button class="button resume_pomodoro">Resume</button>
+                <button class="button stop_pomodoro">Stop</button>
+            </div>
+            <div class="pomodoro_btn_overlay btn_overlay_3">
+                <button class="button pause_pomodoro">Pause</button>
+                <button class="button stop_pomodoro">Stop</button>
+            </div>
+        </div>
+    </div>
+    <button class="homepage icon_button button"><i class="fas fa-home"></i></button>
+</main>
+<main class="wrapper flex_wrapper window_wrapper" id="audio_settings">
+    <div class="wrapper_window">
+        <div class="window_title_pane">
+            <h2 class="window_title">Available themes</h2>
+            <div class="window_buttons">
+                <button class="button close_button" close_target="#audio_settings"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <ul class="white_noise_list">
+        </ul>
+    </div>
+</main>
+<main class="wrapper main_wrapper">
+    <h1>Stay focused.</h1>
+    <h2>All tasks</h2>
+    <ul class="to_do_nav">
+        <li class="to_do_nav_item" to_do_category="today">
+            <div><i class="fas fa-sun"></i><span>Today</span></div>
+        </li>
+        <li class="to_do_nav_item" to_do_category="tomorrow">
+            <div><i class="fas fa-calendar-day"></i><span>Tomorrow</span></div>
+        </li>
+        <li class="to_do_nav_item" to_do_category="upcoming">
+            <div><i class="fas fa-calendar-week"></i><span>Upcoming</span></div>
+        </li>
+        <li class="to_do_nav_item" to_do_category="no_deadline">
+            <div><i class="fas fa-calendar"></i><span>Untimed To-Dos</span></div>
+        </li>
+        <li class="to_do_nav_item" to_do_category="completed">
+            <div><i class="fas fa-calendar-check"></i><span>Completed</span></div>
+        </li>
+    </ul>
+    <h2>Projects</h2>
+    <div class="add_project">
+        <textarea type="text" placeholder="Add a project!" rows="1"></textarea>
+        <button class="button btn_no_bg"><i class="fas fa-plus add"></i></button>
+    </div>
+    <ul class="to_do_nav custom_projects">
+    </ul>
+    <button class="hide_homepage button icon_button"><i class="fas fa-arrow-left"></i></button>
+    <button class="button quick_start">25</button>
+    {#    </div>#}
+
+</main>
+<main class="wrapper flex_wrapper window_wrapper" id="main_settings">
+    <div class="wrapper_window">
+        <div class="window_title_pane">
+            <h2 class="window_title">Settings</h2>
+            <div class="window_buttons">
+                <button class="button close_button" close_target="#main_settings"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="main_content">
+            <h3 class="window_heading">Adjust your Pomodoro</h3>
+            <ul class="pomodoro_settings">
+                <li>
+                    <label for="work_duration" class="settings_label">Work duration</label>
+                    <select id="work_duration" class="settings_button">
+                    </select>
+                </li>
+                <li>
+                    <label for="short_break_duration" class="settings_label">Short break duration</label>
+                    <select id="short_break_duration" class="settings_button">
+                    </select>
+                </li>
+                <li>
+                    <label for="long_break_duration" class="settings_label">Long break duration</label>
+                    <select id="long_break_duration" class="settings_button">
+                    </select>
+                </li>
+                <li>
+                    <label for="break_cycle" class="settings_label">Pomodoros every long break</label>
+                    <select id="break_cycle" class="settings_button">
+                    </select>
+                </li>
+            </ul>
+            <h3 class="window_heading">Focus enhancement</h3>
+            <ul>
+                <li>
+                    <p class="settings_label">White noise</p>
+                    <button class="button white_noise_info settings_button"><i class="fas fa-volume-up"></i></button>
+                </li>
+                <li>
+                    <p class="settings_label">No-distraction mode</p>
+                    <label class="switch">
+                        <input type="checkbox" id="intensive_mode_switch">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+            </ul>
+            <h3 class="window_heading">Advanced</h3>
+            <ul>
+                <li>
+                    <p class="settings_label">Restore Pomodoro defaults</p>
+                    <button id="wipe_pomodoro_config" class="settings_button button">Restore
+                    </button>
+                </li>
+                <li>
+                    <p class="settings_label">Reset</p>
+                    <button id="wipe_data" class="settings_button button">Wipe data
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<main class="wrapper flex_wrapper window_wrapper" id="task_wrapper">
+    <div class="wrapper_window">
+        <div class="window_title_pane">
+            <h2 class="window_title"></h2>
+            <div class="window_buttons">
+                <button class="button btn_no_bg delete_project_button"><i class="fas fa-trash"></i></button>
+                <button class="button close_button" close_target="#task_wrapper"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="add_task">
+            <textarea type="text" placeholder="Add a task!" class="add_task_input" rows="1"></textarea>
+            <button class="button btn_no_bg"><i class="fas fa-plus add"></i></button>
+        </div>
+        <div class="main_content">
+            <ul>
+            </ul>
+        </div>
+        <div class="quick_tomato_counter">
+            <i class="fas fa-stopwatch"></i>
+            <i class="fas fa-stopwatch"></i>
+            <i class="fas fa-stopwatch"></i>
+            <i class="fas fa-stopwatch"></i>
+            <i class="fas fa-stopwatch"></i>
+            <i class="fas fa-stopwatch"></i>
+        </div>
+    </div>
+</main>
+<main class="wrapper flex_wrapper window_wrapper" id="edit_task_wrapper">
+    <div class="wrapper_window">
+        <div class="window_title_pane">
+            <h2 class="window_title"><span>Edit task</span></h2>
+            <div class="window_buttons">
+                <button class="button btn_no_bg close_button" close_target="#edit_task_wrapper"><i
+                        class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="edit_task_name">
+                <input class="custom_checkbox" type="checkbox">
+                <textarea class="edit_task_name_input" placeholder="Task name..." rows="1"></textarea>
+            </div>
+            <ul>
+                <li>
+                    <label for="deadline" class="settings_label">Deadline</label>
+                    <div class="flex_settings">
+                        <input id="deadline" type="text">
+                        <button id="clear_deadline" CLASS="button btn_no_bg"><i class="fas fa-times"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <label for="pomodoro_count" class="settings_label">Pomodoro Goal</label>
+                    <input id="pomodoro_count" type="text" pattern="[0-9]+">
+                </li>
+                <li>
+                    <label for="project_location" class="settings_label">Project</label>
+                    <select id="project_location">
+                        <option value="0">Project 0</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://kit.fontawesome.com/bac08de2ab.js" crossorigin="anonymous"></script>
+<script src="{% static "/js/moment.js" %}"></script>
+<script src="{% static "/js/app.js" %}"></script>
+</html>

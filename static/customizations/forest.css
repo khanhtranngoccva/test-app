@@ -1,0 +1,16 @@
+:root {
+    --theme-gradient: linear-gradient(45deg, #fbeb73, #4dde87);
+    --theme-color: #fbeb73;
+}
+
+.background {
+    background: url("/static/images/forest.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.pomodoro_wrapper {
+    color: white;
+}
+.pomodoro_clock .mask .fill {
+    border: 8px solid white;
+}

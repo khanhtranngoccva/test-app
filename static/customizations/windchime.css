@@ -1,0 +1,18 @@
+:root {
+    --theme-gradient: linear-gradient(45deg, #ffcece, #d793ff);
+    --theme-color: #d793ff;
+
+}
+
+.background {
+    background: url("/static/images/windchime.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.pomodoro_wrapper {
+    color: white;
+}
+
+.pomodoro_clock .mask .fill {
+    border: 8px solid white;
+}

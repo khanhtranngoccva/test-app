@@ -1,0 +1,16 @@
+:root {
+    --theme-gradient: linear-gradient(45deg, #fff887, #ff8888);
+    --theme-color: #ff8888;
+}
+
+.background {
+    background: url("/static/images/campfire.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.pomodoro_wrapper {
+    color: white;
+}
+.pomodoro_clock .mask .fill {
+    border: 8px solid white;
+}
