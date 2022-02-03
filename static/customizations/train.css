@@ -1,0 +1,16 @@
+:root {
+    --theme-gradient: linear-gradient(45deg, #ffcfcf, #dda9ff);
+    --theme-color: #dda9ff;
+    --digital-clock-display: #505050;
+    --digital-clock-circle: #505050;
+    --background: #eeeeee;
+}
+
+.background {
+    background-image: url("/static/images/train.webp");
+    filter: blur(1px);
+}
+
+.pomodoro_buttons button {
+    outline: 2px solid #00000044
+}

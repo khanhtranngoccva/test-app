@@ -1,0 +1,25 @@
+:root {
+    --theme-gradient: linear-gradient(45deg, #4c5fbe, #6e4fc2);
+    --theme-color: #4c5fbe;
+    --primary: white;
+    --background: #1c1c1c;
+    --shading: drop-shadow(0px 0px 4px #ffffff22);
+    --brighten: brightness(1.1);
+}
+
+.background {
+    background-image: url("/static/images/night.webp");
+    filter: blur(9px);
+}
+
+.pomodoro_wrapper {
+    color: white;
+}
+
+.pomodoro_clock .mask .fill {
+    border: 8px solid white;
+}
+
+.white_noise_info i {
+    color: white;
+}

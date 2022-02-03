@@ -1,0 +1,17 @@
+:root {
+    --theme-gradient: linear-gradient(45deg, #98c1ff, #6bf1b7);
+    --theme-color: #719aff;
+    --digital-clock-display: #000000;
+}
+
+.background {
+    background-image: url(/static/images/wind.webp);
+}
+
+.pomodoro_wrapper {
+    color: white;
+}
+
+.to_do.current .custom_checkbox:before {
+    outline: 1px solid #00000011;
+}

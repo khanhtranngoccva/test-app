@@ -1,0 +1,244 @@
+/* CUSTOM SWITCH */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 7px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--theme-color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--theme-color);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* BUTTONS */
+.button {
+    background: var(--background);
+    border-radius: 30px;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    filter: none;
+}
+
+.button.btn_no_bg {
+    background: none;
+}
+
+.button i {
+    margin: auto;
+    font-size: 1.3em;
+    vertical-align: middle;
+}
+
+.button:hover {
+    background: var(--background);
+    filter: var(--shading) var(--brighten);
+    cursor: pointer;
+}
+
+/* QUICK START */
+.quick_start {
+    --button-size: 20vw;
+    --max-button-size: 80px;
+    --real_button-size: min(var(--button-size), var(--max-button-size));
+    color: var(--primary);
+    margin: auto;
+    width: var(--button-size);
+    max-width: var(--max-button-size);
+    height: var(--button-size);
+    max-height: var(--max-button-size);
+    background: var(--theme-color);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: calc(50% - var(--real_button-size) / 2);
+    padding: 0;
+    font-size: calc(var(--real_button-size) / 2);
+    vertical-align: middle;
+    font-weight: 800;
+    filter: var(--shading);
+}
+
+.quick_start:hover {
+    color: black;
+    background: white;
+}
+.quick_start.break {
+    background: #67ff8e;
+}
+
+/* MORE BUTTONS */
+.window_buttons {
+    margin-right: 0;
+    font-size: 1.6em;
+    display: flex;
+}
+
+.window_buttons .button {
+    background: none;
+    filter: none;
+}
+
+.close_button {
+    padding-right: 5px;
+}
+
+.button.icon_button {
+    padding: 10px;
+    line-height: 0;
+}
+
+.main_navigation .button {
+    margin-bottom: 5px;
+    background: var(--theme-gradient);
+}
+
+.homepage_btn, .hide_homepage_btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    padding: 10px;
+    background: var(--theme-gradient);
+}
+
+.homepage_btn:hover, .hide_homepage_btn:hover {
+    background: var(--theme-gradient);
+}
+
+/* POMODORO BUTTONS */
+.pomodoro_buttons {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 15px;
+}
+
+.pomodoro_buttons button {
+    height: fit-content;
+    position: relative;
+    color: var(--primary);
+    background: var(--background);
+}
+
+/* SETTINGS COMPONENTS */
+.settings_label {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.settings_button {
+    width: fit-content;
+    border: none;
+    text-align: right;
+    border-radius: 30px;
+    padding: 5px 7px;
+    margin-right: 7px;
+    color: var(--primary);
+    background: var(--background);
+}
+
+.settings_button:hover {
+    color: var(--primary);
+    background: var(--theme-color);
+}
+
+
+/* CUSTOM MADE CHECKBOX */
+.custom_checkbox {
+    position: relative;
+    margin: auto;
+}
+
+.to_do.current .custom_checkbox:before {
+    outline: 1px solid #00000000;
+}
+
+.custom_checkbox:checked:before {
+    background: #0fc43f;
+    outline: #00000000;
+}
+
+.custom_checkbox:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: white;
+    opacity: 1;
+    top: -8px;
+    outline: 1px solid #00000000;
+    left: -7px;
+    z-index: 0;
+    transition: background-color 0.25s ease, outline 0.25s ease;
+}
+
+.custom_checkbox:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 5px;
+    top: 0;
+    left: 0;
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
+    z-index: 1;
+    transform: rotate(-45deg);
+    display: none;
+}
+
+.custom_checkbox:checked:after {
+    display: block;
+}

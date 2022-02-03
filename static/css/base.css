@@ -1,0 +1,73 @@
+/* BASIC STYLING AND THEME VARIABLES */
+body {
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease, top 0.25s ease, opacity 0.25s ease, backdrop-filter 0.3s ease, filter 0.3s ease, outline 0.25s ease;;
+    word-break: break-word;
+}
+
+:root {
+    --theme-gradient: linear-gradient(45deg, #ffcece, #d793ff);
+    --theme-color: #d793ff;
+    --shading: drop-shadow(1px 2px 6px #00000000);
+    --larger-shading: drop-shadow(2px 4px 8px #00000000);
+    --darken: brightness(0.6);
+    --brighten: brightness(1.2);
+    --primary: #000000;
+    --background: #ffffff;
+    --digital-clock-circle: #ffffff;
+    --digital-clock-display: #ffffff;
+    --digital-clock-background: none;
+    --digital-clock-display-hover: #000000;
+    --digital-clock-background-hover: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    text-align: center;
+}
+
+textarea {
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: middle;
+    resize: none;
+    padding: 8px 7px 8px 13px;
+    border: none;
+    border-radius: 30px;
+    height: fit-content;
+    /*margin-top: 0;*/
+    /*margin-bottom: 0;*/
+    flex: 1;
+    width: 100%;
+    outline: 1px solid #00000022;
+}
+
+textarea:focus, textarea:hover {
+    outline: 2px solid var(--theme-color);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+i {
+    color: var(--primary);
+}
+
+input, select, textarea {
+    color: var(--primary);
+    background: var(--background);
+}
+
+::placeholder {
+    color: var(--primary);
+    filter: opacity(0.6);
+}

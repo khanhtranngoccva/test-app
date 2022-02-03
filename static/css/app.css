@@ -1,0 +1,345 @@
+/* POMODORO CLOCK */
+.pomodoro_box {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.pomodoro_clock_overlay {
+    display: flex;
+    flex: 3;
+    padding: 5%;
+}
+
+.pomodoro_clock {
+    height: 100%;
+    margin: auto;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+}
+
+.pomodoro_clock .circle .mask,
+.pomodoro_clock .circle .fill {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.pomodoro_clock .mask .fill {
+    border: 8px solid var(--digital-clock-circle);
+}
+
+.clock_rotate {
+    transform: rotate(180deg);
+}
+
+.pomodoro_info {
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    color: var(--digital-clock-display);
+}
+
+.time_left {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2% 4%;
+    border-radius: 60px;
+    word-break: keep-all;
+    filter: var(--larger-shading);
+}
+
+.white_noise_info {
+    margin: 0 auto;
+    display: flex;
+    width: fit-content;
+    column-gap: 10px;
+    justify-content: center;
+    padding: 7px 10px;
+    border-radius: 30px;
+}
+
+.white_noise_info i, .white_noise_info span {
+    margin: auto;
+    color: var(--digital-clock-display);
+}
+
+.pomodoro_clock .white_noise_info:hover i {
+    color: var(--digital-clock-display-hover);
+}
+
+.pomodoro_clock .white_noise_info:hover span {
+    color: var(--digital-clock-display-hover);
+}
+
+.white_noise_info:hover, .time_left:hover {
+    background: white;
+    color: var(--digital-clock-display-hover);
+    cursor: pointer;
+}
+
+.main_navigation .mute_button.muted {
+    background: red;
+}
+
+.main_navigation .mute_button.muted i {
+    color: white;
+}
+
+.main_navigation .effects_button.disabled {
+    background: red;
+}
+
+.main_navigation .effects_button.disabled i {
+    color: white;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVE LAYOUT */
+@media only screen and (min-width: 500px) {
+    .task_info {
+        display: block;
+    }
+
+    .task_info > div {
+        display: inline-block;
+        margin-right: 5px;
+        line-height: 1.5;
+    }
+}
+
+@media only screen and (min-width: 480px) and (min-height: 400px) {
+    .to_do_frame {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    .white_noise_list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .to_do_item > .options {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 640px) and (min-height: 480px) {
+    body {
+        font-size: 1.05rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (min-height: 640px) {
+    body {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 768px) {
+    body {
+        font-size: 1.15rem;
+    }
+}
+
+
+@media (max-height: 370px) {
+    h2, h3, h4, li {
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    .add_task {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #task_wrapper .main_content .to_do_item {
+        flex-direction: row;
+    }
+
+    .to_do_frame {
+        display: none !important;
+    }
+
+    .to_do_item {
+        padding: 5px;
+    }
+
+    .to_do_item .options {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .wrapper_window {
+        padding: 8px;
+    }
+
+    .window_title_pane {
+        margin-bottom: 0;
+    }
+
+    .add_task {
+        margin-top: 5px;
+    }
+
+    #task_wrapper .main_content > ul {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .pomodoro_clock_overlay {
+        padding: 10px 10px;
+        flex: 3;
+    }
+
+    .pomodoro_buttons {
+        padding-top: 0;
+    }
+
+
+}
+
+@media (max-width: 420px) {
+    .main_navigation {
+        flex-direction: row;
+    }
+
+    .window_buttons .button {
+        padding: 0 5px;
+    }
+
+    .window_title span, .window_title textarea {
+        font-size: 0.9rem;
+    }
+
+    h2, h3, h4, li {
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    #task_wrapper .main_content .to_do_item {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .to_do_item .options {
+        flex: 100%;
+    }
+
+    .to_do_frame {
+        display: none !important;
+    }
+
+    .to_do_item {
+        padding: 5px;
+    }
+
+    .edit_task_details li {
+        padding-bottom: 0;
+    }
+
+    .to_do_item .options {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .window_title_pane {
+        margin-bottom: 10px;
+    }
+
+    .pomodoro_clock_overlay {
+        padding: 5%;
+    }
+
+    .edit_task_details .button {
+        padding: 2px;
+    }
+
+    .wrapper_window {
+        width: 95%;
+        height: 95%;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .wrapper_window {
+        border-radius: 20px;
+    }
+
+    .button i {
+        font-size: 1.3rem;
+    }
+
+    .main_navigation {
+        column-gap: 5px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .homepage_btn, .hide_homepage_btn {
+        top: 10px;
+        left: 10px;
+    }
+
+    .edit_task_details li {
+        display: block;
+    }
+
+    .edit_task_details input, .edit_task_details label, .edit_task_details select {
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .window_title {
+        column-gap: 5px;
+    }
+
+    textarea {
+        padding-left: 6px;
+        padding-right: 0;
+        border-radius: 20px;
+    }
+}
+
+/* WEBKIT EXTRAS */
+:root {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar {
+    --min-scrollbar-width: 8px;
+    --max-scrollbar-width: 20px;
+    --scrollbar-width: 3%;
+    --real-scrollbar-width: min(max(var(--min-scrollbar-width), var(--scrollbar-width)), var(--max-scrollbar-width));
+    width: var(--real-scrollbar-width);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: calc(var(--real-scrollbar-width) / 4) solid transparent;
+    background: var(--theme-gradient);
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 100px;
+}
+
+::-webkit-calendar-picker-indicator {
+    margin-left: 0;
+}

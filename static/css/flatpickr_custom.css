@@ -1,0 +1,102 @@
+:root {
+    --flatpickr_cal_padding: 10px;
+}
+
+.flatpickr-calendar {
+    border-radius: 30px;
+    width: fit-content;
+    padding: var(--flatpickr_cal_padding);
+    background: var(--background);
+    /*border-color: var(--background);*/
+    color: var(--primary);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    filter: var(--shading);
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+    color: var(--primary);
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
+    color: var(--primary);
+    background: var(--background);
+}
+
+.flatpickr-current-month input.cur-year {
+    color: var(--primary);
+}
+
+.numInputWrapper span {
+    color: var(--primary);
+    opacity: 1;
+    border: none;
+}
+.numInputWrapper span.arrowUp:after {
+    top: 35%;
+}
+.numInputWrapper span.arrowDown:after {
+    top: 25%;
+}
+
+
+.numInputWrapper span:after {
+    border-bottom-color: var(--primary) !important;
+    border-top-color: var(--primary) !important;
+}
+
+
+
+.flatpickr-day {
+    color: var(--primary);
+}
+
+.flatpickr-day:hover {
+    color: var(--background);
+    background: var(--primary);
+}
+
+.flatpickr-months .flatpickr-prev-month, .flatpickr-months .flatpickr-next-month {
+    top: var(--flatpickr_cal_padding);
+}
+
+.flatpickr-months .flatpickr-prev-month {
+    left: var(--flatpickr_cal_padding) !important;
+}
+
+.flatpickr-months .flatpickr-next-month {
+    right: var(--flatpickr_cal_padding) !important;
+}
+
+.flatpickr-day.selected {
+    background: var(--theme-gradient) !important;
+    color: var(--primary) !important;
+    border: none;
+    /*transform: scale(1.05);*/
+}
+
+.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover, .flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay, .flatpickr-day.notAllowed, .flatpickr-day.notAllowed.prevMonthDay, .flatpickr-day.notAllowed.nextMonthDay {
+    color: var(--primary);
+    filter: opacity(0.5);
+}
+
+span.flatpickr-weekday {
+    color: var(--primary);
+}
+
+.flatpickr-months .flatpickr-prev-month svg, .flatpickr-months .flatpickr-next-month svg {
+    fill: var(--theme-color);
+    transform: scale(1.5);
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg, .flatpickr-months .flatpickr-next-month:hover svg {
+    transform: scale(2);
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+    text-align: right;
+}
+
+.flatpickr-calendar:before, .flatpickr-calendar:after {
+    display: none;
+}

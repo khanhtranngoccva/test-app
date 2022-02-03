@@ -1,0 +1,17 @@
+:root {
+    --theme-gradient: linear-gradient(45deg, #fbeb73, #4cde87);
+    --theme-color: #52b46a;
+}
+
+.background {
+    background-image: url("/static/images/forest.webp");
+}
+
+.pomodoro_wrapper {
+    color: white;
+}
+
+.to_do.current .custom_checkbox:before {
+    outline: 1px solid #00000011;
+}
+

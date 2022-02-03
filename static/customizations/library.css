@@ -1,0 +1,8 @@
+:root {
+    --theme-gradient: linear-gradient(45deg, #fed831, #ff7b8b);
+    --theme-color: #ff7b8b;
+}
+
+.background {
+    background-image: url("/static/images/library.webp");
+}

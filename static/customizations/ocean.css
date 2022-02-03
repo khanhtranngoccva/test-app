@@ -1,0 +1,21 @@
+:root {
+    --theme-gradient: linear-gradient(45deg, #ffe8a8, #88ffff);
+    --theme-color: #4cd1ff;
+}
+
+:root.dark_mode {
+    --theme-gradient: linear-gradient(45deg, #006aff, #d7b900);
+    --theme-color: #006aff;
+}
+
+.background {
+    background-image: url("/static/images/beach.webp");
+}
+
+.pomodoro_wrapper {
+    color: white;
+}
+
+.pomodoro_clock .mask .fill {
+    border: 8px solid white;
+}
